@@ -3,6 +3,7 @@ const blogsRouter = require('express').Router()
 const jwt = require('jsonwebtoken')
 const Blog = require('../models/blog')
 const User = require('../models/user')
+const { tokenExtractor, userExtractor } = require('../utils/middleware')
 
 
 blogsRouter.get('/', async (request, response) => {
@@ -10,9 +11,10 @@ blogsRouter.get('/', async (request, response) => {
   response.json(blogs)
 })
 
-blogsRouter.post('/', async (request, response, next) => {
+blogsRouter.post('/', tokenExtractor, userExtractor, async (request, response, next) => {
   const blog = request.body
   const user = await User.findById(request.user)
+  console.log(user)
 
   const blogData = new Blog({
     title: blog.title,
@@ -33,7 +35,7 @@ blogsRouter.post('/', async (request, response, next) => {
   }
 })
 
-blogsRouter.delete('/:id', async (request, response, next) => {
+blogsRouter.delete('/:id',tokenExtractor, async (request, response, next) => {
   //const authUserId = request.token.id
   const user = request.user
   try{
@@ -48,14 +50,13 @@ blogsRouter.delete('/:id', async (request, response, next) => {
     }else{
       response.status(401).json({ error: 'Wrong blog' })
     }
-    
-    
+
   }catch(exception){
     next(exception)
   }
 })
 
-blogsRouter.put('/:id', async (request, response, next) => {
+blogsRouter.put('/:id',tokenExtractor, async (request, response, next) => {
   const blog = request.body
 
   const blogData = {

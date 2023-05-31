@@ -30,11 +30,11 @@ const errorHandler = (error, request, response, next) => {
 }
 
 const tokenExtractor = (request, response, next) => {
-  
+
   const authorization = request.get('authorization')
-  const token = (authorization && authorization.toLowerCase().startsWith('bearer ')) 
-                    ? authorization.substring(7) 
-                    : null;
+  const token = (authorization && authorization.toLowerCase().startsWith('bearer '))
+    ? authorization.substring(7)
+    : null
 
   //console.log(`TOKEN ENVIADO ${token}`)
   //OBTINENE UN OBJETO CON EL NOMBRE DE USUARIO, EL ID Y UNA VALOR IAT
@@ -55,15 +55,11 @@ const tokenExtractor = (request, response, next) => {
 }
 
 const userExtractor = (request, response, next) => {
-  const getToken = () =>{
-    const authorization = request.get('authorization')
-    if(authorization && authorization.toLowerCase().startsWith('bearer ')){
-        return authorization.substring(7)
-    }
-    return null
-  }
+  const authorization = request.get('authorization')
+  const token = (authorization && authorization.toLowerCase().startsWith('bearer '))
+    ? authorization.substring(7)
+    : null
 
-  const token = getToken()
 
   const decodedToken = jwt.verify(token, process.env.SECRET)
 
