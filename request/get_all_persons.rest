@@ -10,12 +10,12 @@ GET http://localhost:3001/api/users
 ###
 POST http://localhost:3001/api/blogs
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBpcGUiLCJpZCI6IjY0NzBlMTc4MDdjN2U0YmE2YjAxMDU3ZSIsImlhdCI6MTY4NTUwMzI4MX0.cXMpUgFOuCq41ddRaRjyJplf7kAWGW-MGu3_awVYJbo
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBpcGUiLCJpZCI6IjY0N2I2Yjc1ZDQ0ZTM1YWVjNDViZTJhNyIsImlhdCI6MTY4NTgxMDI0M30.qfyU8x8O2b9Hqhuj5Rk8rYEwhHyxnlnGB8fSzy0qhCY
 
 {
-    "title": "Codealo",
-    "author": "El real codero",
-    "url": "www.codificandolo.com",
+    "title": "Learn basic JS ",
+    "author": "Js magician",
+    "url": "www.jsmagician.com/learn-js",
     "likes": 20
 }
 
@@ -36,7 +36,7 @@ Content-Type: application/json
 
 {
     "username":"pipe",
-    "name": "Pipe Calderon",
+    "name": "Pipe Calderón",
     "password":"abcd"
 }
 
@@ -50,16 +50,17 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3001/api/blogs/646e12a1fd6385897c7e11bc
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBlcGUiLCJpZCI6IjY0MDdmODhmY2FjZjcxYmIwNDE0ZTk3OSIsImlhdCI6MTY4NDkzNTAxMH0.Fxoq8sdIZRkzlffoFjQqMxC1NT8GUi0HxACdpRMSQaQ
+DELETE http://localhost:3001/api/blogs/647b6e8e510b62f7ca85826e
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBpcGUiLCJpZCI6IjY0N2I2Yjc1ZDQ0ZTM1YWVjNDViZTJhNyIsImlhdCI6MTY4NTgxMDI0M30.qfyU8x8O2b9Hqhuj5Rk8rYEwhHyxnlnGB8fSzy0qhCY
 
 ###
-PUT  http://localhost:3001/api/blogs/63e3d9114aecfa8cf88dfdb3
+PUT  http://localhost:3001/api/blogs/647b6d55510b62f7ca858262
 Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InBpcGUiLCJpZCI6IjY0N2I2Yjc1ZDQ0ZTM1YWVjNDViZTJhNyIsImlhdCI6MTY4NTgxMDI0M30.qfyU8x8O2b9Hqhuj5Rk8rYEwhHyxnlnGB8fSzy0qhCY
 
 {
-    "title": "HTML is a language",
-    "author": "PPA",
-    "url": "www.yahoo.com",
-    "likes": 20
+    "title": "Learn basic linux ",
+    "author": "Linuxer07",
+    "url": "www.linuxer07.com/learn-linux",
+    "likes": 21
 }

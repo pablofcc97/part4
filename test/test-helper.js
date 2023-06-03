@@ -6,14 +6,14 @@ const initialBlogs = [
     title: 'HTML is easy',
     author: 'PPK',
     url: 'www.google.com',
-    users: '6407f886cacf71bb0414e975',
+    user: '6407f886cacf71bb0414e975',
     likes: 20
   },
   {
     title: 'HTML is hard',
     author: 'PPq',
     url: 'www.bing.com',
-    users: '6407f886cacf71bb0414e975',
+    user: '6407f886cacf71bb0414e975',
     likes: 2
   },
 ]

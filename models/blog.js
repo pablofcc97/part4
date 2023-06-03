@@ -14,12 +14,11 @@ const blogSchema = new mongoose.Schema({
   },
   likes: { type:Number, default:0 },
   /*Los identificadores de los usuarios se almacenan como un array de ID de mongo*/
-  users : [
+  user :
     {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User'
-    }
-  ],
+    },
 })
 blogSchema.plugin(uniqueValidator)
 
